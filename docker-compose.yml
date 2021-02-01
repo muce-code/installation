@@ -73,6 +73,6 @@ services:
 
 networks:
   muce-traefik:
-    driver: bridge
+    external: true
   nginx-net:
     driver: bridge
