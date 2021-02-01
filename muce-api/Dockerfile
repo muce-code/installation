@@ -24,7 +24,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /opt/muce/
-COPY MuceAPI-all.jar /opt/muce/
+COPY MuceAPI-all.jar /opt/muce/MuceAPI-all.jar
 
 RUN chmod a+rwx /opt/muce/MuceAPI-all.jar
 
