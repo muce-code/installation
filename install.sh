@@ -11,6 +11,9 @@ DEBIAN_FRONTEND=noninteractive apt-get update && apt install -y \
     git \
     curl
 
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 add-apt-repository \
@@ -43,14 +46,16 @@ cd ./muce-api
 ./gradlew shadowJar
 
 cd ..
-mkdir muce-api-docker
+mkdir -p ./muce-api-docker
 cp ./muce-api/build/libs/MuceAPI-all.jar ./muce-api-docker/
 cp ./installation/muce-api/Dockerfile ./muce-api-docker/
 
-docker build -t museapi:latest ./installation/muce-api/docker
+cd ./muce-api-docker
+
+docker build -t muceapi:latest ./muce-api-docker/
+
+docker network create muce-traefik
 
 cd /opt/muce
 
-docker network
-
-docker-compose up -d
+chmod a+rw -R /opt/muce/
