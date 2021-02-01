@@ -40,6 +40,9 @@ cp ./installation/nginx/fastcgi-php.conf /opt/muce/nginx
 docker build -t muce-code:latest ./installation/muce-code/
 
 git clone https://github.com/muce-code/muce-api.git ./muce-api
+
+cp ./muce-api/src/main/resources/config.yml /opt/muce/muce-api/config.yml
+
 chmod +x ./muce-api/gradlew
 
 cd ./muce-api
@@ -50,9 +53,10 @@ mkdir -p ./muce-api-docker
 cp ./muce-api/build/libs/MuceAPI-all.jar ./muce-api-docker/
 cp ./installation/muce-api/Dockerfile ./muce-api-docker/
 
+
 cd ./muce-api-docker
 
-docker build -t muceapi:latest ./
+docker build -t muceapi:latest ./muce-api-docker/
 
 docker network create muce-traefik
 
