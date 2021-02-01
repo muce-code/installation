@@ -26,6 +26,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir /opt/muce/
 COPY MuceAPI-all.jar /opt/muce/
 
+RUN chmod a+rwx /opt/muce/MuceAPI-all.jar
+
 CMD ["java", "-jar", "/opt/muce/MuceAPI-all.jar", "-Dspring.config.location=classpath:application.properties"]
 
 EXPOSE 8080
