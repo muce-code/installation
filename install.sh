@@ -52,7 +52,7 @@ cp ./installation/muce-api/Dockerfile ./muce-api-docker/
 
 cd ./muce-api-docker
 
-docker build -t muceapi:latest ./muce-api-docker/
+docker build -t muceapi:latest ./
 
 docker network create muce-traefik
 
