@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - "./muce-api:/opt/muce"
+      - "./muce-api/config.yml:/opt/muce/config.yml"
       - "./data:/opt/muce/code"
       - "/var/run/docker.sock:/var/run/docker.sock"
 
