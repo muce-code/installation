@@ -28,6 +28,8 @@ COPY MuceAPI-all.jar /opt/muce/MuceAPI-all.jar
 
 RUN chmod a+rwx /opt/muce/MuceAPI-all.jar
 
+WORKDIR /opt/muce/
+
 CMD ["java", "-jar", "/opt/muce/MuceAPI-all.jar", "-Dspring.config.location=classpath:application.properties"]
 
 EXPOSE 8080
