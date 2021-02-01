@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   muce-api:
-    image: "muceapi:latest"
+    image: muceapi:latest
     container_name: "muce-api"
     restart: "unless-stopped"
     ports:
