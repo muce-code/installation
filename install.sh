@@ -9,7 +9,8 @@ DEBIAN_FRONTEND=noninteractive apt-get update && apt install -y \
     gnupg-agent \
     software-properties-common \
     git \
-    curl
+    curl \
+    unzip
 
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
@@ -38,6 +39,7 @@ cp ./installation/nginx/nginx.conf /opt/muce/nginx/
 cp ./installation/nginx/fastcgi-php.conf /opt/muce/nginx
 
 cd ./installation/muce-code/
+unzip extensions.zip -d .
 docker build -t muce-code:latest ./
 
 cd ../../

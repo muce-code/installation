@@ -7,8 +7,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
         gcc \
         python3 \
         python3-pip \
-        bsdtar \
-        curl
         
 RUN mkdir /config/workspace
 
