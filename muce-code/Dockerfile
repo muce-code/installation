@@ -6,9 +6,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
         g++ \
         gcc \
         python3 \
-        python3-pip \
+        python3-pip
         
-RUN mkdir /config/workspace
+RUN mkdir /config/workspace/
 
 RUN mkdir /ext
 COPY ./*.vsix /ext/
