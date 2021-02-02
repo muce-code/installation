@@ -7,7 +7,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
         gcc \
         python3 \
         python3-pip
-        
+#Gradle
+RUN mkdir /opt/gradle
+
+RUN cd /opt/gradle && curl https://services.gradle.org/distributions/gradle-6.8.1-all.zip -O
+RUN unzip -d /opt/gradle gradle-6.8.1-bin.zip
+RUN export PATH=$PATH:/opt/gradle/gradle-6.8.1/bin
+
 RUN mkdir /config/workspace/
 
 RUN mkdir /ext
