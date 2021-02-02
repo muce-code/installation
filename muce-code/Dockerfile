@@ -20,8 +20,3 @@ RUN code-server --install-extension /ext/ms-vscode.cpptools-1.1.3.vsix
 RUN code-server --install-extension /ext/vscjava.vscode-java-pack-0.12.1.vsix
 RUN code-server --install-extension /ext/vscjava.vscode-java-debug-0.30.0.vsix
 RUN code-server --install-extension /ext/redhat.java-0.74.0.vsix
-
-RUN chmod u-rwx -R /config
-RUN chmod a-rwx -R /config
-RUN chmod g-rwx -R /config
-run chmod u+rwx -R /config/workspace
