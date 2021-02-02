@@ -14,7 +14,8 @@ RUN mkdir /opt/gradle
 
 RUN cd /opt/gradle && wget -O /opt/gradle/gradle-6.8.1-all.zip https://services.gradle.org/distributions/gradle-6.8.1-all.zip
 RUN unzip -d /opt/gradle/ /opt/gradle/gradle-6.8.1-all.zip
-RUN export PATH=$PATH:/opt/gradle/gradle-6.8.1/bin
+
+ENV PATH="/opt/gradle/gradle-6.8.1/bin:${PATH}"
 
 RUN mkdir /config/workspace/
 
