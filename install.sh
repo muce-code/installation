@@ -37,7 +37,10 @@ cp ./installation/docker-compose.yml /opt/muce/
 cp ./installation/nginx/nginx.conf /opt/muce/nginx/
 cp ./installation/nginx/fastcgi-php.conf /opt/muce/nginx
 
-docker build -t muce-code:latest ./installation/muce-code/
+cd ./installation/muce-code/
+docker build -t muce-code:latest ./
+
+cd ../../
 
 git clone https://github.com/muce-code/muce-api.git ./muce-api
 
