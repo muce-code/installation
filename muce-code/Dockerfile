@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
         
 RUN mkdir /config/workspace
 
-run mkdir /ext
+RUN mkdir /ext
 COPY ./*.vsix /ext/
 RUN code-server --install-extension /ext/*.vsix
 
