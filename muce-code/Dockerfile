@@ -12,8 +12,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
 #Gradle
 RUN mkdir /opt/gradle
 
-RUN cd /opt/gradle && wget -O gradle-6.8.1-all.zip https://services.gradle.org/distributions/gradle-6.8.1-all.zip
-RUN unzip -d /opt/gradle/ gradle-6.8.1-all.zip
+RUN cd /opt/gradle && wget -O /opt/gradle/gradle-6.8.1-all.zip https://services.gradle.org/distributions/gradle-6.8.1-all.zip
+RUN unzip -d /opt/gradle/ /opt/gradle/gradle-6.8.1-all.zip
 RUN export PATH=$PATH:/opt/gradle/gradle-6.8.1/bin
 
 RUN mkdir /config/workspace/
